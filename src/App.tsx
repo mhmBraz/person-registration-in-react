@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from 'react';
+import { AddPerson } from "./AddPerson";
+import Home from "./Home";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-function App() {
+type TPerson = {
+  id        : number;
+  lastName  : string;
+  firstName : string;
+  age       : string;
+  email     : string;
+};
+
+export function App() {
+  const [people, setPeople] = useState<TPerson[]>([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Home people={people} setPeople={setPeople}/>}
+        />
+        <Route 
+          path="addperson" 
+          element={<AddPerson people={people} setPeople={setPeople} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
