@@ -1,4 +1,3 @@
-import React,{ useState } from 'react';
 import { AddPerson } from "./AddPerson";
 import Home from "./Home";
 import {
@@ -15,8 +14,15 @@ type TPerson = {
   email     : string;
 };
 
-export function App() {
-  const [people, setPeople] = useState<TPerson[]>([]);
+type TApp = {
+  people    : TPerson[];
+  setPeople : React.Dispatch<React.SetStateAction<TPerson[]>>
+}
+
+export function App({
+  people,
+  setPeople
+} : TApp) {
 
   return (
     <BrowserRouter>
