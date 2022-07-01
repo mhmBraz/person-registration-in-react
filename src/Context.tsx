@@ -1,7 +1,7 @@
-import React,{ useState } from 'react';
+import { useState } from 'react';
 import { App } from './App';
 
-type TPerson = {
+export type TPerson = {
   id        : number;
   lastName  : string;
   firstName : string;

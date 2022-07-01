@@ -16,7 +16,7 @@ const columns: GridColDef[] = [
     headerName: 'Email',
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
-    width: 160,
+    width: 200,
   },
 ];
 

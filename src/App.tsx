@@ -1,20 +1,9 @@
 import { AddPerson } from "./AddPerson";
 import Home from "./Home";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { TPerson } from "./Context";
 
-type TPerson = {
-  id        : number;
-  lastName  : string;
-  firstName : string;
-  age       : string;
-  email     : string;
-};
-
-type TApp = {
+export type TApp = {
   people    : TPerson[];
   setPeople : React.Dispatch<React.SetStateAction<TPerson[]>>
 }
@@ -29,7 +18,7 @@ export function App({
       <Routes>
         <Route 
           path="/" 
-          element={<Home people={people} setPeople={setPeople}/>}
+          element={<Home people={people}/>}
         />
         <Route 
           path="addperson" 
