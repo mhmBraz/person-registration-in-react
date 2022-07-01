@@ -24,7 +24,7 @@ export function Home({
       </Box>
 
       <Box sx={{ display: 'grid', boxShadow: 5, gridTemplateRows: 'repeat(3, 1fr)'}}>
-        <Row rows={people ? people : []}/> 
+        <Row people={people ? people : []}/> 
       </Box>
     </Header>
   );

@@ -9,7 +9,7 @@ export function Header({
   children
 } : TApplicationContextProviderProps) {
   return(
-    <Container>
+    <Container maxWidth="sm">
       <Card variant="outlined" sx={{ p: 1, m: 1, boxShadow: 5, maxHeight: 600}}>
         {children}
       </Card>

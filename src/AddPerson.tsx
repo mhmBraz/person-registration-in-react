@@ -9,7 +9,6 @@ import { AddButton } from "./AddButton";
 import { Header } from './Header';
 import { TApp } from './App'
 
-
 export function AddPerson({ 
   people,
   setPeople
@@ -40,23 +39,23 @@ export function AddPerson({
   return (
     <Header>
       <Box sx={{ mb: 1, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
-        <Logo logo={"./download.png"}/>
+        <Logo logo={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRag-8SqVR2mtWVc4RqyWgIoyVjkNTta6dFAg&usqp=CAU"}/>
       </Box>
 
-      <Box>
+      <Box sx={{mt:2}} >
         <AddButton to={'/'} name={'Voltar'} />
       </Box>
 
       <Card variant="outlined" sx={{boxShadow: 5, mt: 2, p:1}}>
         <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
           <Box gridColumn="span 6">
-              <TextField name="firstName" 
+              <TextField fullWidth name="firstName" 
                 onChange={event => saveChange(event.target.value, setFirstName)}
                 label="Primeiro nome" variant="outlined" />
           </Box>
 
           <Box gridColumn="span 6">
-            <TextField name="LastName" 
+            <TextField fullWidth name="LastName" 
               onChange={event => saveChange(event.target.value, setLastName)}
               label="Segundo nome" variant="outlined" />
           </Box>
@@ -67,13 +66,13 @@ export function AddPerson({
                 label="Idade" variant="outlined" />
           </Box>
 
-          <Box gridColumn="span 8">
-            <TextField name="email" 
+          <Box gridColumn="span 7">
+            <TextField fullWidth name="email" 
               onChange={event => saveChange(event.target.value, setEmail)}
               label="E-mail" variant="outlined" />
           </Box>
         </Box>
-
+       
         <Link to={'/'}>
           <Box sx={{ display: 'flex', justifyContent: 'space-around', mt:2 }}>
             <Button variant="contained"

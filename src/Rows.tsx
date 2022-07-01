@@ -1,5 +1,5 @@
-import React from 'react';
 import { DataGrid, GridColDef} from '@mui/x-data-grid';
+import { TPerson } from "./Context";
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 30 },
@@ -20,12 +20,19 @@ const columns: GridColDef[] = [
   },
 ];
 
-export function Row(props : any) {  
+
+type TRow = {
+  people : TPerson[]
+}
+
+export function Row({
+people
+} : TRow) {  
 
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        rows={props.rows}
+        rows={people}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
